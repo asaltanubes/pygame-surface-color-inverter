@@ -1,7 +1,8 @@
-import pygame, math
+import pygame, math, os
 from colorinverter import invert_color
 pygame.init()
-img = 'poro.jpg'
+img = 'images\\poro.jpg'
+imgname = img.split('\\')[-1]
 image = pygame.image.load(img)
 # Create the window with the same size of the image
 window = pygame.display.set_mode((image.get_size()))
@@ -15,26 +16,26 @@ def circle_surface(radius, color = (255, 255, 255)):
 
 # makes an inverted image and saves it
 inverted_image = invert_color(image)
-pygame.image.save(inverted_image, 'anti' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'anti' + imgname))
 
 # Some examples of other "anticolors"
 inverted_image = invert_color(image, color = (0, 0, 255))
-pygame.image.save(inverted_image, 'antiblue' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'antiblue' + imgname))
 
 inverted_image = invert_color(image, color = (0, 255, 0))
-pygame.image.save(inverted_image, 'antigreen' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'antigreen' + imgname))
 
 inverted_image = invert_color(image, color = (255, 0, 0))
-pygame.image.save(inverted_image, 'antired' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'antired' + imgname))
 
 inverted_image = invert_color(image, color = (0, 255, 255))
-pygame.image.save(inverted_image, 'anticyan' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'anticyan' + imgname))
 
 inverted_image = invert_color(image, color = (255, 255, 0))
-pygame.image.save(inverted_image, 'antiyellow' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'antiyellow' + imgname))
 
 inverted_image = invert_color(image, color = (255, 0, 255))
-pygame.image.save(inverted_image, 'antipink' + img)
+pygame.image.save(inverted_image, os.path.join('images', 'antipink' + imgname))
 
 # Radious (in pixels) of the circle
 radius = 25
