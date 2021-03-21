@@ -1,4 +1,4 @@
-#Pygame surface color inverter
+# Pygame surface color inverter
 This module includes 1 functions that inverts the color of a given surface.
 
 ```python
